@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products & Buyers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Products & Buyers</h1>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search by name, category, email...">
+            <button onclick="searchData()">Search</button>
+            <button onclick="resetSearch()">Reset</button>
+        </div>
+    </header>
+    
+    <main>
+        <section class="form-section">
+            <article>
+                <h2>Add/Edit Product</h2>
+                <form id="products-form" onsubmit="event.preventDefault(); saveData('products');">
+                    <label>Name: <input type="text" name="name" required></label>
+                    <label>Category: <input type="text" name="category" required></label>
+                    <label>Price: <input type="number" name="price" required></label>
+                    <label>Quantity: <input type="number" name="quantity" required></label>
+                    <label>Description: <textarea name="description"></textarea></label>
+                    <button type="submit">Save Product</button>
+                </form>
+            </article>
+            
+            <article>
+                <h2>Add/Edit Buyer</h2>
+                <form id="buyers-form" onsubmit="event.preventDefault(); saveData('buyers');">
+                    <label>Name: <input type="text" name="name" required></label>
+                    <label>Email: <input type="email" name="email" required></label>
+                    <label>Phone: <input type="text" name="phone" required></label>
+                    <label>Address: <textarea name="address"></textarea></label>
+                    <button type="submit">Save Buyer</button>
+                </form>
+            </article>
+        </section>
+        
+        <section class="list-section">
+            <article>
+                <h2>Product List</h2>
+                <div id="product-list"></div>
+            </article>
+            
+            <article>
+                <h2>Buyer List</h2>
+                <div id="buyer-list"></div>
+            </article>
+        </section>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>
